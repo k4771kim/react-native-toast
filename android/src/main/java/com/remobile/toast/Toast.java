@@ -39,7 +39,10 @@ public class Toast extends ReactContextBaseJavaModule implements LifecycleEventL
                         getReactApplicationContext(),
                         message,
                         "short".equals(duration) ? android.widget.Toast.LENGTH_SHORT : android.widget.Toast.LENGTH_LONG);
-
+                View view = toast.getView();
+                view.getBackground().setColorFilter(Color.parseColor("#222222"), PorterDuff.Mode.SRC_IN);
+                TextView text = (TextView)view.findViewById(android.R.id.message);
+                text.setTextColor(Color.parseColor("#ffffff"));
                 if ("top".equals(position)) {
                     toast.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL, 0, 20 + addPixelsY);
                 } else if ("bottom".equals(position)) {
