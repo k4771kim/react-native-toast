@@ -1,6 +1,10 @@
 package com.remobile.toast;
 
+import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.view.Gravity;
+import android.view.View;
+import android.widget.TextView;
 
 import com.facebook.common.logging.FLog;
 import com.facebook.react.bridge.*;
